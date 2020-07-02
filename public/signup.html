@@ -2,24 +2,22 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Sign Up</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://kit.fontawesome.com/882676d0bc.js" crossorigin="anonymous"></script>
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
+  <img class="logo-img" src="img/logo.png">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
+        <h2>Get Signed Up!</h2>
+        <h6 style="font-family: cursive;">Start selling your old items from the comfort of your own home!</h6>
         <form class="signup">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -33,7 +31,9 @@
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span> <span class="msg"></span>
           </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="far fa-paper-plane"></i>
+          </button>
         </form>
         <br />
         <p>Or log in <a href="/login">here</a></p>
@@ -41,7 +41,27 @@
     </div>
   </div>
 
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <a class="project-github" href="#!"><i class="fab fa-github"></i></a>
+          <p class="text-lighten-4">© 2020 Copyright</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5>Contributors</h5>
+          <ul>
+            <li>Kim Le</li>
+            <li>Kyle Stokes</li>
+            <li>Sibel Cidem</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>
 
 </body>

@@ -2,3 +2,114 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+/* Nav Style */
+nav{
+  height: 100px;
+  background-color: silver;
+}
+
+.logo{
+  color: black;
+  font-size: 40px;
+  line-height: 100px;
+  font-family: cursive;
+}
+
+.logo:hover{
+  color: white;
+}
+
+.nav-links{
+  color: black;
+  font-size: 20px;
+  line-height: 100px;
+  font-family: cursive;
+}
+
+.nav-links:hover{
+  color: white;
+}
+
+.material-icons{
+  color: black;
+  font-family: cursive;
+}
+
+.logo-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Form Style */
+h2{
+  font-family: cursive;
+}
+
+.col-md-offset-3{
+  width: 550px;
+  height: 500px;
+  border-style: solid;
+  border-width: 15px;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.btn{
+  width: 160px;
+  height: 50px;
+  font-family: cursive;
+  font-size: 20px;
+  color: white;
+  background-color: cornflowerblue;
+}
+
+.btn:hover{
+  background-color: cornflowerblue;
+}
+
+.btn:visited{
+  background-color: cornflowerblue;
+}
+
+/* Footer Style */
+.page-footer{
+  padding: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: silver;
+  width: 100%;
+  height: 120px;
+  margin: auto;
+  position: fixed;
+}
+
+.project-github{
+  font-size: 50px;
+  color: black;
+}
+
+.project-github:hover{
+  color: white;
+}
+
+.text-lighten-4{
+  margin-top: 4px;
+  color: black;
+  font-size: large;
+  font-family: monospace;
+}
+
+li{
+  color: black;
+  font-family: monospace;
+}
+
+h5{
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: monospace;
+}
