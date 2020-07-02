@@ -3,6 +3,7 @@ const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -27,7 +28,20 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  
-
-
+  app.get("/items/user", isAuthenticated, (req, res) => {
+    if (!req.user) {
+      res.redirect("/");
+    } else {
+      const userId = req.user.id;
+      db.garage_sale
+        .findAll({
+          where: { UserId: userId }
+        })
+        .then(result => {
+          // eslint-disable-next-line camelcase
+          res.render("garage_sale", { garage_sale: result });
+        });
+    }
+    res.sendFile(path.join(__dirname, "../public/items.html"));
+  });
 };
