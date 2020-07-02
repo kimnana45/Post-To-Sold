@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS garage_sale;
+
+CREATE DATABASE garage_sale;
