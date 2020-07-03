@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Joker&voldy2019",
-    "database": "passport_demo",
+    "password": "develop1!",
+    "database": "garage_sale",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
