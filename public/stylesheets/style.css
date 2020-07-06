@@ -1,6 +1,7 @@
 body html{
   width: 100%;
   height: 100%;
+  margin: 0;
 }
 
 form.signup,
@@ -11,6 +12,7 @@ form.login {
 .container{
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 /* Nav Style */
@@ -165,14 +167,28 @@ textarea{
 
 h3{
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
 }
 
 .card{
-  background-color: silver;
+  background-color: white;
   width: 300px;
+  height: 500px;
   margin: 10px;
+  margin-top: 25px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: mediumseagreen;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.horizontal{
+  width: 95%;
+  height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr{
@@ -180,3 +196,43 @@ hr{
   margin-left: 0;
   margin-right: 0;
 }
+
+.member-card{
+  background-color: white;
+  border-color: mediumseagreen;
+  height: 500px;
+  width: 310px;
+  margin: 0;
+  margin-top: 87px;
+  margin-left: 20px;
+}
+
+.item-img-container{
+  padding: 10px;
+}
+
+.user-item-img{
+  display: block;
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+}
+
+.user-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.view-all{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
