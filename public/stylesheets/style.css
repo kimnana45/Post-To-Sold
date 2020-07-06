@@ -234,5 +234,6 @@ hr{
   margin-right: auto;
 }
 
-
-
+.delete-btn{
+  margin-right: 10px;
+}
