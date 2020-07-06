@@ -25,14 +25,14 @@
         </ul>
       </div>
     </nav>
-    <div class="row">
+    <div id  = "postItem" class="row">
       <div class="jumbotron">
         <h3>Post a Item</h3>
-        <textarea placeholder="Item Name"></textarea>
+        <textarea id = "itemName" placeholder="Item Name"></textarea>
         <hr class="my-4">
-        <textarea placeholder="Item Description"></textarea>
+        <textarea id = "itemDescription" placeholder="Item Description"></textarea>
         <hr class="my-4">
-        <textarea placeholder="Item Price"></textarea>
+        <textarea id = "itemPrice" placeholder="Item Price"></textarea>
         <hr class="my-4">
         <div class="input-field">
           <select>
@@ -55,14 +55,14 @@
             <option value="16">Tools</option>
             <option value="17">Videogames</option>
           </select>
-          <label>Select Category</label>
+          <label id = "category">Select Category</label>
         </div>
         <hr class="my-4">
         <div class="upload-area">
           <h4 class="upload-text">Upload a Picture of your Item</h4>
-          <button class="btn pic-btn waves-effect waves-light" type="submit" name="action"><i class="fas fa-upload"></i></button>
+          <button id = "postPicture" class="btn pic-btn waves-effect waves-light" type="submit" name="action"><i class="fas fa-upload"></i></button>
           <hr class="my-4">
-          <button class="btn upload-btn waves-effect waves-light" type="submit" name="action"><i class="fas fa-dollar-sign"></i> Post Item
+          <button id = "submitItem" class="btn upload-btn waves-effect waves-light" type="submit" name="action"><i class="fas fa-dollar-sign"></i> Post Item
             <i class="fas fa-dollar-sign"></i>
           </button>
         </div>
