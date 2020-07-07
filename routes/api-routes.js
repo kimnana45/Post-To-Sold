@@ -50,12 +50,13 @@ module.exports = function(app) {
       });
     }
   });
-
+//GET route for getting all posts/ view all items
   app.get("/api/items/:id", isAuthenticated, (req, res) => {
     db.garage_sale.findAll({}).then(result => {
       res.json(result);
     });
   });
+//What is this route for?
   app.get("/api/items/:id", isAuthenticated, (req, res) => {
     const userId = req.user.id;
 
@@ -67,8 +68,20 @@ module.exports = function(app) {
         res.json(result);
       });
   });
+//POST route for creating a new postItem
+app.post("/api/postItem", function(req, res) {
+  db.Garage_sale.create(req.body).then(function(dbGarage_sale) {
+    console.log(dbGarage_sale);
+    res.json(dbGarage_sale);
+  });
+});
 
-  app.post("/api/items", isAuthenticated, (req, res) => {
+
+
+// ------------><----------------//
+
+//trying to understand all these routes
+  app.post("/api/items", (req, res) => {
     const userId = req.user.id;
 
     db.garage_sale
@@ -84,8 +97,9 @@ module.exports = function(app) {
       });
   });
 
-  app.put("/api/item/:id", isAuthenticated, (req, res) => {
-    const userId = req.user.id;
+  app.put("/api/item/:id", (req, res) => {
+    if (req.user) {
+      const userId = req.user.id;
 
     db.garage_sale
       .update(
@@ -102,6 +116,9 @@ module.exports = function(app) {
       .then(result => {
         res.json(result);
       });
+    } else {
+      res.status(500).send("Unauthorized");
+    }   
   });
 
   app.delete("/api/items/:id", isAuthenticated, (req, res) => {

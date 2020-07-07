@@ -56,7 +56,6 @@ nav{
   margin-right: auto;
 }
 
-
 /* Form Style */
 h2{
   font-family: cursive;
@@ -95,7 +94,6 @@ h2{
   height: 100px;
   margin: auto;
   margin-top: 10px;
-  position: fixed;
 }
 
 .project-github{
