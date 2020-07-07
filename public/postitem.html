@@ -12,19 +12,27 @@
 </head>
 
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/members" class="logo">Post To Sold</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i id="float-right" class="material-icons">Menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="nav-links" href="#">View All Items</a></li>
+        <li><a class="nav-links" href="#">Post Item</a></li>
+        <li><a class="nav-links" href="#">User</a></li>
+        <li><a class="nav-links" href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="nav-links" href="#">View All Items</a></li>
+    <li><a class="nav-links" href="#">Post Item</a></li>
+    <li><a class="nav-links" href="#">User</a></li>
+    <li><a class="nav-links" href="/logout">Logout</a></li>
+  </ul>
+
   <div class="container">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="/members" class="logo">Post To Sold</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i id="float-right" class="material-icons">Menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="nav-links" href="#">View All Items</a></li>
-          <li><a class="nav-links" href="#">Post Item</a></li>
-          <li><a class="nav-links" href="#">User</a></li>
-          <li><a class="nav-links" href="/logout">Logout</a></li>
-        </ul>
-      </div>
-    </nav>
     <div id  = "postItem" class="row">
       <div class="jumbotron">
         <h3>Post a Item</h3>
@@ -68,25 +76,26 @@
         </div>
       </div>
     </div>
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <a class="project-github" href="#!"><i class="fab fa-github"></i></a>
-            <p class="text-lighten-4">© 2020 Copyright</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5>Contributors</h5>
-            <ul>
-              <li>Kim Le</li>
-              <li>Kyle Stokes</li>
-              <li>Sibel Cidem</li>
-            </ul>
-          </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row footer-row">
+        <div class="col l6 s12">
+          <a class="project-github" href="https://github.com/kimnana45/Project2" target="blank"><i class="fab fa-github"></i></a>
+          <p class="text-lighten-4">© 2020 Copyright</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5>Contributors</h5>
+          <ul>
+            <li>Kim Le<a target="blank" href="https://github.com/kimnana45"><i class="footer-social fab fa-github-square"></i></a><a target="blank" href="https://www.linkedin.com/in/kimle-lek/"><i class="footer-social fab fa-linkedin"></i></a></li>
+            <li>Kyle Stokes<a target="blank" href="https://github.com/kylest0kes"><i class="footer-social fab fa-github-square"></i></a><a target="blank" href="https://www.linkedin.com/in/kylest0kes/"><i class="footer-social fab fa-linkedin"></i></a></li>
+            <li>Sibel Cidem<a target="blank" href="https://github.com/seebell"><i class="footer-social fab fa-github-square"></i></a><a target="blank" href="https://www.linkedin.com/in/sibel-cidem-b7487a197/"><i class="footer-social fab fa-linkedin"></i></a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -105,3 +105,8 @@ $(document).ready(() => {
     }).then(getItems);
   }
 });
+
+//jQuery for navbar mobile response
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
