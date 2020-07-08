@@ -1,8 +1,8 @@
 const db = require("../models");
 const passport = require("../config/passport");
-const isAuthenticated = require("../config/middleware/isAuthenticated");
+// const isAuthenticated = require("../config/middleware/isAuthenticated");//Why is this here?
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -13,6 +13,7 @@ module.exports = function(app) {
       id: req.user.id
     });
   });
+
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
@@ -68,12 +69,13 @@ module.exports = function(app) {
         });
     }
   });
-  
-//POST route for creating a new postItem
-app.post("/api/posts", function(req, res) {
-  db.Garage_sale.create(req.body).then(function(dbGarage_sale) {
-    console.log(dbGarage_sale);
-    res.json(dbGarage_sale);
+
+  //POST route for creating a new postItem
+  app.post("/api/posts", function (req, res) {
+    db.Garage_sale.create(req.body).then(function (dbGarage_sale) {
+      console.log(dbGarage_sale);
+      res.json(dbGarage_sale);
+    });
   });
 
   //DELETE route for when an item is sold/deleted
@@ -88,4 +90,4 @@ app.post("/api/posts", function(req, res) {
         res.json(result);
       });
   });
-};
+}

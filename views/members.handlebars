@@ -23,7 +23,7 @@
         <div class="card member-card">
             <img class="user-img" src="https://www.antgibbz.com/wp-content/uploads/2016/05/person-placeholder-200x200.jpg">
             <div class="card-content">
-                <h6>Welcome {{}}!</h6>
+                <h6>Welcome {{User.dataValues.email}}!</h6>
             </div>
             <div class="card-action">
                 <a href="#">Upload</a>
@@ -37,13 +37,13 @@
         <h3 class="view-all" style="text-decoration: underline;">All Your Current Posted Items</h3>
         <div class="card horizontal">
             <div class="card-image item-img-container">
-            <img class="user-item-img" src="{{}}">
+            <img class="user-item-img" src="{{dataValues.picture}}">
             </div>
             <div class="card-stacked">
             <div class="card-content">
-                <h6 class="name">{{}}</h6><br>
-                <p class="user-description">{{}}</p><br>
-                <h7 class="category">{{}}</h7><br>
+                <h6 class="name">{{dataValues.name}}</h6><br>
+                <p class="user-description">{{dataValues.description}}</p><br>
+                <h7 class="category">{{dataValues.category}}</h7><br>
             </div>
             <div class="card-action del-post">
                 <button class="delete-btn waves-effect waves-light"><i class="fas fa-trash-alt delete-icon"></i><h7>Delete Post</h7></button>
@@ -53,4 +53,4 @@
     </div>
 </div>
 
-  <script type="text/javascript" src="public/js/members.js"></script>
+  <script type="text/javascript" src="/js/members.js"></script>
