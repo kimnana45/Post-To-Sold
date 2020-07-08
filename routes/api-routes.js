@@ -56,18 +56,7 @@ module.exports = function(app) {
       res.json(result);
     });
   });
-//What is this route for?
-  app.get("/api/items/:id", isAuthenticated, (req, res) => {
-    const userId = req.user.id;
 
-    db.garage_sale
-      .findOne({
-        where: { UserId: userId, id: req.params.id }
-      })
-      .then(result => {
-        res.json(result);
-      });
-  });
 //POST route for creating a new postItem
 app.post("/api/postItem", function(req, res) {
   db.Garage_sale.create(req.body).then(function(dbGarage_sale) {
@@ -76,52 +65,8 @@ app.post("/api/postItem", function(req, res) {
   });
 });
 
-
-
-// ------------><----------------//
-
-//trying to understand all these routes
-  app.post("/api/items", (req, res) => {
-    const userId = req.user.id;
-
-    db.garage_sale
-      .create({
-        name: req.body.name,
-        description: req.body.last_name,
-        price: req.body.price,
-        picture: req.body.picture,
-        UserId: userId
-      })
-      .then(result => {
-        res.json(result);
-      });
-  });
-
-  app.put("/api/item/:id", (req, res) => {
-    if (req.user) {
-      const userId = req.user.id;
-
-    db.garage_sale
-      .update(
-        {
-          name: req.body.name,
-          description: req.body.last_name,
-          price: req.body.price,
-          picture: req.body.picture
-        },
-        {
-          where: { UserId: userId, id: req.params.id }
-        }
-      )
-      .then(result => {
-        res.json(result);
-      });
-    } else {
-      res.status(500).send("Unauthorized");
-    }   
-  });
-
-  app.delete("/api/items/:id", isAuthenticated, (req, res) => {
+//DELETE route for when an item is sold/deleted
+  app.delete("/api/items/:id", (req, res) => {
     const userId = req.user.id;
 
     db.garage_sale
