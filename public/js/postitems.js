@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
   // Getting jQuery references to the postItem name, description, price, category, picture
   const nameInput = $("#itemName");
   const descriptionInput = $("#itemDescription");
@@ -17,16 +17,23 @@ $(document).ready(function () {
   function uploadPicture() {
     filepicker.pick(
       {
-        mimetype: 'image/*',
-        services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'URL', 'IMGUR', 'PICASA'],
-        openTo: 'COMPUTER'
+        mimetype: "image/*",
+        services: [
+          "COMPUTER",
+          "FACEBOOK",
+          "INSTAGRAM",
+          "URL",
+          "IMGUR",
+          "PICASA"
+        ],
+        openTo: "COMPUTER"
       },
-      function(Blob){
+      Blob => {
         console.log(JSON.stringify(Blob));
-        const handler = Blob.url.substring(Blob.url.lastIndexOf('/') + 1);
-        document.getElementById('postPicture').dataset.handler = handler;
+        const handler = Blob.url.substring(Blob.url.lastIndexOf("/") + 1);
+        document.getElementById("postPicture").dataset.handler = handler;
       },
-      function(FPError){
+      FPError => {
         console.log(FPError.toString());
       }
     );
@@ -52,13 +59,17 @@ $(document).ready(function () {
   function handleFormSubmit(event) {
     console.log("test");
     event.preventDefault();
-    console.log("1")
-    // Wont submit the post if we are missing a name, description, price, category, or picture 
-    if (!nameInput.val().trim() ||
+    console.log("1");
+    // Wont submit the post if we are missing a name, description, price, category, or picture
+    if (
+      !nameInput.val().trim() ||
       !descriptionInput.val().trim() ||
       !priceInput.val() ||
       // !category ||
       !picture) {
+      !category ||
+      !picture)
+      {
       return;
     }
     console.log("2");
@@ -75,12 +86,23 @@ $(document).ready(function () {
         .trim(),
       // category: category,
       picture: document.getElementById('postPicture').dataset.handler,     
+
     };
 
-    // Submits a new post and brings user to blog page upon completion  
-      $.post("/api/posts", newPost, function () {
-        console.log(newPost);
-        window.location.href = "/allitems";
-      });
+    // Submits a new post and brings user to blog page upon completion
+    $.post("/api/posts", newPost, () => {
+      console.log(newPost);
+      window.location.href = "/allitems";
+    });
   }
+});
+
+//jQuery for navbar mobile response
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+
+//jQUery for dropdown catgory area
+$(document).ready(function(){
+  $('select').formSelect();
 });

@@ -50,22 +50,33 @@ module.exports = function(app) {
       });
     }
   });
-//GET route for getting all posts/ view all items
-  app.get("/api/items/:id", isAuthenticated, (req, res) => {
-    db.garage_sale.findAll({}).then(result => {
-      res.json(result);
-    });
+  //GET route for getting all posts/ view all items
+  app.get("/api/items/:id?", (req, res) => {
+    if (!req.user) {
+      res.status(500).send("unauthorized");
+    } else {
+      const options = {};
+      if (req.params.id) {
+        options.where = { id: req.params.id };
+      }
+      db.Garage_sale.findAll(options)
+        .then(result => {
+          res.json(result);
+        })
+        .catch(error => {
+          res.status(500).json(error);
+        });
+    }
   });
-
+  
 //POST route for creating a new postItem
 app.post("/api/posts", function(req, res) {
   db.Garage_sale.create(req.body).then(function(dbGarage_sale) {
     console.log(dbGarage_sale);
     res.json(dbGarage_sale);
   });
-});
 
-//DELETE route for when an item is sold/deleted
+  //DELETE route for when an item is sold/deleted
   app.delete("/api/items/:id", (req, res) => {
     const userId = req.user.id;
 

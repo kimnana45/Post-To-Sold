@@ -5,7 +5,7 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/", (req, res) => {
     if (req.user) {
       res.redirect("/members");
@@ -30,7 +30,8 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/postitem.html"));
   });
 
-  app.get("/posts", (req, res) => {
+  app.get("/allitems", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/allitems.html"));
   });
-}
+ 
+};
