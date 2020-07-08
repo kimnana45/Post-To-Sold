@@ -50,61 +50,23 @@ module.exports = function(app) {
       });
     }
   });
-
+//GET route for getting all posts/ view all items
   app.get("/api/items/:id", isAuthenticated, (req, res) => {
     db.garage_sale.findAll({}).then(result => {
       res.json(result);
     });
   });
-  app.get("/api/items/:id", isAuthenticated, (req, res) => {
-    const userId = req.user.id;
 
-    db.garage_sale
-      .findOne({
-        where: { UserId: userId, id: req.params.id }
-      })
-      .then(result => {
-        res.json(result);
-      });
+//POST route for creating a new postItem
+app.post("/api/postItem", function(req, res) {
+  db.Garage_sale.create(req.body).then(function(dbGarage_sale) {
+    console.log(dbGarage_sale);
+    res.json(dbGarage_sale);
   });
+});
 
-  app.post("/api/items", isAuthenticated, (req, res) => {
-    const userId = req.user.id;
-
-    db.garage_sale
-      .create({
-        name: req.body.name,
-        description: req.body.last_name,
-        price: req.body.price,
-        picture: req.body.picture,
-        UserId: userId
-      })
-      .then(result => {
-        res.json(result);
-      });
-  });
-
-  app.put("/api/item/:id", isAuthenticated, (req, res) => {
-    const userId = req.user.id;
-
-    db.garage_sale
-      .update(
-        {
-          name: req.body.name,
-          description: req.body.last_name,
-          price: req.body.price,
-          picture: req.body.picture
-        },
-        {
-          where: { UserId: userId, id: req.params.id }
-        }
-      )
-      .then(result => {
-        res.json(result);
-      });
-  });
-
-  app.delete("/api/items/:id", isAuthenticated, (req, res) => {
+//DELETE route for when an item is sold/deleted
+  app.delete("/api/items/:id", (req, res) => {
     const userId = req.user.id;
 
     db.garage_sale

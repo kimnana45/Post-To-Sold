@@ -1,7 +1,7 @@
-/* eslint-disable camelcase */
-module.exports = function(sequelize, DataTypes) {
-  const garage_sale = sequelize.define(
-    "garage_sale",
+//define garare_sale table
+module.exports = function (sequelize, DataTypes) {
+  const Garage_sale = sequelize.define(
+    "Garage_sale",
     {
       name: {
         type: DataTypes.STRING,
@@ -17,7 +17,6 @@ module.exports = function(sequelize, DataTypes) {
           len: [1 - 250]
         }
       },
-
       price: {
         type: DataTypes.DECIMAL,
         allowNull: false,
@@ -25,26 +24,31 @@ module.exports = function(sequelize, DataTypes) {
           len: [1 - 10]
         }
       },
-
+      category: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       picture: {
         type: DataTypes.STRING,
         allownull: false,
         validate: {
           len: [1 - 700]
         }
-      }
+      },
+        sold: {
+          type: DataTypes.BOOLEAN, 
+          defaultValue: false
+        }
     },
     { timestamps: false }
   );
-
-  garage_sale.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    garage_sale.belongsTo(models.User, {
+  Garage_sale.associate = function (models) {
+    Garage_sale.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
   };
-  return garage_sale;
+  Garage_sale.sync({force: true});
+  return Garage_sale;
 };
