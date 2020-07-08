@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $('select').formSelect();
 });
+
 //-------------><------------------//
 $(document).ready(function () {
   //conatiner that hold all of our post info
@@ -73,4 +74,9 @@ $(document).ready(function () {
       </div>
     `
   }
-})
+});
+
+//jQuery for navbar mobile response
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
