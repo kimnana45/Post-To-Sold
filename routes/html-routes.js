@@ -30,8 +30,19 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/postitem.html"));
   });
 
-  app.get("/allitems", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/allitems.html"));
+  app.get("/allitems", isAuthenticated, (req, res) => {
+    db.Garage_sale.findAll({
+      where: {sold: false}, include: db.User
+    })
+        .then(result => {
+          console.log(result[0].dataValues.name)
+          res.render("allitems", {items: result})
+        })
+        .catch(error => {
+          res.status(500).json(error);
+        });
+    
+    // res.sendFile(path.join(__dirname, "../public/allitems.html"));
   });
  
 };
