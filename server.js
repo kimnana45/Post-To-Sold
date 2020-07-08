@@ -7,9 +7,7 @@ const passport = require("./config/passport");
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");
-
 const app = express();
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 

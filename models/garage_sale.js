@@ -49,6 +49,6 @@ module.exports = function (sequelize, DataTypes) {
       }
     });
   };
-  Garage_sale.sync({force: true});
+  // Garage_sale.sync({force: true});
   return Garage_sale;
 };
