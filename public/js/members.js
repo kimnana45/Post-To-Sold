@@ -5,3 +5,8 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 });
+
+//jQuery for navbar mobile response
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
