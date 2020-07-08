@@ -86,3 +86,13 @@ $(document).ready(() => {
     });
   }
 });
+
+//jQuery for navbar mobile response
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+
+//jQUery for dropdown catgory area
+$(document).ready(function(){
+  $('select').formSelect();
+});
