@@ -24,10 +24,10 @@ module.exports = function (sequelize, DataTypes) {
           len: [1 - 10]
         }
       },
-      // category: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true,
-      // },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       picture: {
         type: DataTypes.STRING,
         allownull: false,
@@ -45,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
   Garage_sale.associate = function (models) {
     Garage_sale.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        // allowNull: false
       }
     });
   };

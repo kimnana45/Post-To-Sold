@@ -3,13 +3,11 @@ $(document).ready(() => {
   const nameInput = $("#itemName");
   const descriptionInput = $("#itemDescription");
   const priceInput = $("#itemPrice");
-  // const category = $("#category");
+  const category = $("#category");
   const picture = $("#postPicture");
-  const cmsForm = $("#cms");
-  // Adding an event listener for when the form is submitted
-  // $(cmsForm).on("click", function hanler(){
-  //   console.log("This works!");
-  // })
+  // const cmsForm = $("#cms");//don't need this anymore?
+
+  //onclick event 
   $("#submitItem").on("click", handleFormSubmit);
   $("#postPicture").on("click", uploadPicture);
 
@@ -57,7 +55,6 @@ $(document).ready(() => {
 
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
-    console.log("test");
     event.preventDefault();
     console.log("1");
     // Wont submit the post if we are missing a name, description, price, category, or picture
@@ -65,11 +62,8 @@ $(document).ready(() => {
       !nameInput.val().trim() ||
       !descriptionInput.val().trim() ||
       !priceInput.val() ||
-      // !category ||
-      !picture) {
       !category ||
-      !picture)
-      {
+      !picture) {
       return;
     }
     console.log("2");
@@ -84,9 +78,8 @@ $(document).ready(() => {
       price: priceInput
         .val()
         .trim(),
-      // category: category,
-      picture: document.getElementById('postPicture').dataset.handler,     
-
+      category: category,
+      picture: document.getElementById('postPicture').dataset.handler,
     };
 
     // Submits a new post and brings user to blog page upon completion
@@ -97,12 +90,13 @@ $(document).ready(() => {
   }
 });
 
+
 //jQuery for navbar mobile response
-$(document).ready(function(){
+$(document).ready(function () {
   $('.sidenav').sidenav();
 });
 
 //jQUery for dropdown catgory area
-$(document).ready(function(){
+$(document).ready(function () {
   $('select').formSelect();
 });
