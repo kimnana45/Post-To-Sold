@@ -24,10 +24,10 @@ module.exports = function (sequelize, DataTypes) {
           len: [1 - 10]
         }
       },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      // category: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true,
+      // },
       picture: {
         type: DataTypes.STRING,
         allownull: false,

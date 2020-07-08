@@ -68,13 +68,12 @@ module.exports = function(app) {
         });
     }
   });
-
-  //POST route for creating a new postItem
-  app.post("/api/postItem", (req, res) => {
-    db.Garage_sale.create(req.body).then(dbGarage_sale => {
-      console.log(dbGarage_sale);
-      res.json(dbGarage_sale);
-    });
+  
+//POST route for creating a new postItem
+app.post("/api/posts", function(req, res) {
+  db.Garage_sale.create(req.body).then(function(dbGarage_sale) {
+    console.log(dbGarage_sale);
+    res.json(dbGarage_sale);
   });
 
   //DELETE route for when an item is sold/deleted
