@@ -58,7 +58,7 @@ module.exports = function(app) {
   });
 
 //POST route for creating a new postItem
-app.post("/api/postItem", function(req, res) {
+app.post("/api/posts", function(req, res) {
   db.Garage_sale.create(req.body).then(function(dbGarage_sale) {
     console.log(dbGarage_sale);
     res.json(dbGarage_sale);

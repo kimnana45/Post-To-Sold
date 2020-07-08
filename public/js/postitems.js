@@ -3,14 +3,14 @@ $(document).ready(function () {
   const nameInput = $("#itemName");
   const descriptionInput = $("#itemDescription");
   const priceInput = $("#itemPrice");
-  const category = $("#category");
+  // const category = $("#category");
   const picture = $("#postPicture");
   const cmsForm = $("#cms");
   // Adding an event listener for when the form is submitted
   // $(cmsForm).on("click", function hanler(){
   //   console.log("This works!");
   // })
-  $(cmsForm).on("submit", handleFormSubmit);
+  $("#submitItem").on("click", handleFormSubmit);
   $("#postPicture").on("click", uploadPicture);
 
   //function for uploading picture
@@ -45,6 +45,7 @@ $(document).ready(function () {
   // Otherwise if we have an user_id in our url, preset the author select box to be our Author
   else if (url.indexOf("?user_id=") !== -1) {
     userId = url.split("=")[1];
+    console.log(userId);
   }
 
   // A function for handling what happens when the form to create a new post is submitted
@@ -56,7 +57,7 @@ $(document).ready(function () {
     if (!nameInput.val().trim() ||
       !descriptionInput.val().trim() ||
       !priceInput.val() ||
-      !category ||
+      // !category ||
       !picture) {
       return;
     }
@@ -72,8 +73,8 @@ $(document).ready(function () {
       price: priceInput
         .val()
         .trim(),
-      category: category,
-      picture: document.getElementById('postPictute').dataset.handler,      
+      // category: category,
+      picture: document.getElementById('postPicture').dataset.handler,     
     };
 
     // Submits a new post and brings user to blog page upon completion  
