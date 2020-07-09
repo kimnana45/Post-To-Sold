@@ -78,10 +78,11 @@ $(document).ready(() => {
       price: priceInput
         .val()
         .trim(),
-      category: category,
+      category: category.val(),
       picture: document.getElementById('postPicture').dataset.handler,
     };
 
+    console.log(newPost);
     // Submits a new post and brings user to blog page upon completion
     $.post("/api/posts", newPost, () => {
       console.log(newPost);

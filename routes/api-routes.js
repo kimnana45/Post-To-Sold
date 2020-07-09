@@ -51,6 +51,7 @@ module.exports = function (app) {
       });
     }
   });
+
   //GET route for getting all posts/ view all items
   app.get("/api/items/:id?", (req, res) => {
     if (!req.user) {
@@ -72,6 +73,7 @@ module.exports = function (app) {
 
   //POST route for creating a new postItem
   app.post("/api/posts", function (req, res) {
+    req.body.UserId = req.user.id;
     db.Garage_sale.create(req.body).then(function (dbGarage_sale) {
       console.log(dbGarage_sale);
       res.json(dbGarage_sale);
