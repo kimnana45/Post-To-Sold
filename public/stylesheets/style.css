@@ -34,16 +34,6 @@ nav{
   color: whitesmoke;
 }
 
-@media (max-width: 975px) {
-  nav{
-    text-align: right;
-  }
-
-  .logo{
-    margin-right: 20px;
-  }
-}
-
 .nav-links{
   color: whitesmoke;
   font-size: 20px;
@@ -306,4 +296,20 @@ hr{
 
 .pic-btn{
   margin-left: 10px;
+}
+
+@media (max-width: 975px) {
+  nav{
+    text-align: right;
+  }
+
+  .logo{
+    margin-right: 20px;
+  }
+
+  .card{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
