@@ -30,6 +30,7 @@
     </div>
     <div class="col s12 m8 l9">
         <h3 class="view-all" style="text-decoration: underline;">All Your Current Posted Items</h3>
+        {{#each }}
         <div class="card horizontal">
             <div class="card-image item-img-container">
             <img class="user-item-img" src="{{dataValues.picture}}">
@@ -45,6 +46,7 @@
             </div>
             </div>
         </div> 
+        {{/each}}
     </div>
 </div>
 
