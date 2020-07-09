@@ -1,69 +1,74 @@
 <nav>
-    <div class="nav-wrapper">
-      <a href="/members" class="logo">Post To Sold</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i id="float-right" class="material-icons">Menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="nav-links" href="/allitems">View All Items</a></li>
-        <li><a class="nav-links" href="/postitem">Post Item</a></li>
-        <li><a class="nav-links" href="/members">User</a></li>
-        <li><a class="nav-links" href="/logout">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper">
+    <a href="/members" class="logo">Post To Sold</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i id="float-right"
+        class="material-icons">Menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a class="nav-links" href="/allitems">View All Items</a></li>
+      <li><a class="nav-links" href="/postitem">Post Item</a></li>
+      <li><a class="nav-links" href="/members">User</a></li>
+      <li><a class="nav-links" href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a class="nav-links" href="/allitems">View All Items</a></li>
-    <li><a class="nav-links" href="/postitem">Post Item</a></li>
-    <li><a class="nav-links" href="/members">User</a></li>
-    <li><a class="nav-links" href="/logout">Logout</a></li>
-  </ul>
+<ul class="sidenav" id="mobile-demo">
+  <li><a class="nav-links" href="/allitems">View All Items</a></li>
+  <li><a class="nav-links" href="/postitem">Post Item</a></li>
+  <li><a class="nav-links" href="/members">User</a></li>
+  <li><a class="nav-links" href="/logout">Logout</a></li>
+</ul>
 
-  <div class="container">
-    <div id  = "postItem" class="row">
-      <div class="jumbotron">
-        <h3>Post a Item</h3>
-        <textarea id = "itemName" placeholder="Item Name"></textarea>
+<div class="container">
+  <div id="postItem" class="row">
+    <div class="jumbotron">
+      <h3>Post a Item</h3>
+      <textarea id="itemName" placeholder="Item Name"></textarea>
+      <hr class="my-4">
+      <textarea id="itemDescription" placeholder="Item Description"></textarea>
+      <hr class="my-4">
+      <textarea id="itemPrice" placeholder="Item Price"></textarea>
+      <hr class="my-4">
+      <div class="input-field">
+        <select>
+          <option value="" disabled selected>Choose a Category</option>
+          <option value="1">Appliances</option>
+          <option value="2">Auto</option>
+          <option value="3">Barter</option>
+          <option value="4">Books</option>
+          <option value="5">Cell Phone/Accessories</option>
+          <option value="6">Clothes</option>
+          <option value="7">Computers/Parts</option>
+          <option value="8">Electronics</option>
+          <option value="9">Furniture</option>
+          <option value="10">Home</option>
+          <option value="11">Jewelry</option>
+          <option value="12">Lawn</option>
+          <option value="13">Misc.</option>
+          <option value="14">Musical</option>
+          <option value="15">Sports</option>
+          <option value="16">Tools</option>
+          <option value="17">Videogames</option>
+        </select>
+        <label id="category">Select Category</label>
+      </div>
+      <hr class="my-4">
+      <div class="upload-area">
+        <h4 class="upload-text">Upload a Picture of your Item</h4>
+        <button id="postPicture" class="btn pic-btn waves-effect waves-light" type="submit" name="action"><i
+            class="fas fa-upload"></i></button>
         <hr class="my-4">
-        <textarea id = "itemDescription" placeholder="Item Description"></textarea>
-        <hr class="my-4">
-        <textarea id = "itemPrice" placeholder="Item Price"></textarea>
-        <hr class="my-4">
-        <div class="input-field">
-          <select>
-            <option value="" disabled selected>Choose a Category</option>
-            <option value="1">Appliances</option>
-            <option value="2">Auto</option>
-            <option value="3">Barter</option>
-            <option value="4">Books</option>
-            <option value="5">Cell Phone/Accessories</option>
-            <option value="6">Clothes</option>
-            <option value="7">Computers/Parts</option>
-            <option value="8">Electronics</option>
-            <option value="9">Furniture</option>
-            <option value="10">Home</option>
-            <option value="11">Jewelry</option>
-            <option value="12">Lawn</option>
-            <option value="13">Misc.</option>
-            <option value="14">Musical</option>
-            <option value="15">Sports</option>
-            <option value="16">Tools</option>
-            <option value="17">Videogames</option>
-          </select>
-          <label id = "category">Select Category</label>
-        </div>
-        <hr class="my-4">
-        <div class="upload-area">
-          <h4 class="upload-text">Upload a Picture of your Item</h4>
-          <button id = "postPicture" class="btn pic-btn waves-effect waves-light" type="submit" name="action"><i class="fas fa-upload"></i></button>
-          <hr class="my-4">
-          <button id = "submitItem" class="btn upload-btn waves-effect waves-light" type="submit" name="action"><i class="fas fa-dollar-sign"></i> Post Item
-            <i class="fas fa-dollar-sign"></i>
-          </button>
-        </div>
+        <button id="submitItem" class="btn upload-btn waves-effect waves-light" type="submit" name="action"><i
+            class="fas fa-dollar-sign"></i> Post Item
+          <i class="fas fa-dollar-sign"></i>
+        </button>
       </div>
     </div>
   </div>
+</div>
 
-<script type="text/javascript" src="public/js/post.js"></script>
+
 <script src="https://api.filestackapi.com/filestack.js"></script>
 <script>filepicker.setKey("AG4hPSOMQruX3SKmPWtD0z")</script>
+<script type="text/javascript" src="public/js/post.js"></script>
+

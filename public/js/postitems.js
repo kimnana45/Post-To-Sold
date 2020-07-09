@@ -67,6 +67,7 @@ $(document).ready(() => {
       return;
     }
     console.log("2");
+    const handler = document.getElementById('postPicture').dataset.handler;
     // Constructing a newPost object to hand to the database
     const newPost = {
       name: nameInput
@@ -79,7 +80,7 @@ $(document).ready(() => {
         .val()
         .trim(),
       category: category.val(),
-      picture: document.getElementById('postPicture').dataset.handler,
+      picture: `https://cdn.filestackcontent.com/${handler}`,
     };
 
     console.log(newPost);
