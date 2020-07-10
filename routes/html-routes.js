@@ -16,6 +16,7 @@ module.exports = function(app) {
 
   app.get("/login", (req, res) => {
     if (req.user) {
+      console.log(req.user)
       res.redirect("members");
     }
     res.render("login");
@@ -25,16 +26,26 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     db.Garage_sale.findAll({
-      where: {sold: false}, include: db.User
+      where: {UserId: req.user.id}
     })
         .then(result => {
           console.log(result[0].dataValues.name)
-          res.render("allitems", {items: result})
+          res.render("members", {items: result})
         })
         .catch(error => {
           res.status(500).json(error);
         });
-        res.render("members");
+    // db.User.findOne({
+    //   where: {id: req.user.id}, include: db.Garage_sale
+    // })
+    //     .then(result => {
+    //       console.log(result)
+    //       res.render("members", { result})
+    //     })
+    //     .catch(error => {
+    //       res.status(500).json(error);
+    //     });
+        
     // res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
