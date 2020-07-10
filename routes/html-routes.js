@@ -8,26 +8,39 @@ const db = require("../models");
 module.exports = function(app) {
   app.get("/", (req, res) => {
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+     res.render("signup");
+    // res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/login", (req, res) => {
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+    db.Garage_sale.findAll({
+      where: {sold: false}, include: db.User
+    })
+        .then(result => {
+          console.log(result[0].dataValues.name)
+          res.render("allitems", {items: result})
+        })
+        .catch(error => {
+          res.status(500).json(error);
+        });
+        res.render("members");
+    // res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
   app.get("/postitem", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/postitem.html"));
+    
+    res.render("postitem");
   });
 
   app.get("/allitems", isAuthenticated, (req, res) => {
@@ -44,5 +57,7 @@ module.exports = function(app) {
     
     // res.sendFile(path.join(__dirname, "../public/allitems.html"));
   });
+
+  
  
 };
