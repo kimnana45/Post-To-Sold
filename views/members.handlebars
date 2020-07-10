@@ -24,25 +24,30 @@
             <img class="user-img" src="https://www.antgibbz.com/wp-content/uploads/2016/05/person-placeholder-200x200.jpg">
             <div class="card-content">
                 <h3>Welcome</h3>
-                <h6>{{User.dataValues.email}}!</h6>
+                <h6>{{user.dataValues.email}}!</h6>
             </div>
         </div>
     </div>
     <div class="col s12 m8 l9">
         <h3 class="view-all" style="text-decoration: underline;">All Your Current Posted Items</h3>
-        {{#each items}}
-        <div class="card horizontal">
+        {{#each user.dataValues.Garage_sales}}
+        <div class="card horizontal" >
             <div class="card-image item-img-container">
             <img class="user-item-img" src="{{dataValues.picture}}">
             </div>
             <div class="card-stacked">
             <div class="card-content">
-                <h6 class="name">{{dataValues.name}}</h6><br>
-                <p class="user-description">{{dataValues.description}}</p><br>
-                <h7 class="category">{{dataValues.category}}</h7><br>
+                <p>Price:{{dataValues.price}}</p>
+            <hr class="my-4">
+            <p class="description">{{dataValues.description}}</p>
+            <hr class="my-4">
+            <p>Category: {{dataValues.category}}</p>
+            <hr class="my-4">
+            <p>Sold by: {{User.dataValues.email}}</p>
+            <hr class="my-4">
             </div>
             <div class="card-action del-post">
-                <button class="delete-btn waves-effect waves-light"><i class="fas fa-trash-alt delete-icon"></i><h7>Delete Post</h7></button>
+                <button class="delete-btn waves-effect waves-light" id="delete" data-id="{{dataValues.id}}"><i class="fas fa-trash-alt delete-icon"></i><h7>Delete Post</h7></button>
             </div>
             </div>
         </div> 
