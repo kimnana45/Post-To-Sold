@@ -81,14 +81,15 @@ module.exports = function (app) {
   });
 
   //DELETE route for when an item is sold/deleted
-  app.delete("/api/items/:id", (req, res) => {
-    const userId = req.user.id;
+  app.delete("/api/posts/:id", (req, res) => {
+  
 
-    db.garage_sale
+    db.Garage_sale
       .destroy({
-        where: { UserId: userId, id: req.params.id }
+        where: { id: req.params.id }
       })
       .then(result => {
+        console.log(result);
         res.json(result);
       });
   });
