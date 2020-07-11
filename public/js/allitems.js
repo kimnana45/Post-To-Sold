@@ -1,11 +1,13 @@
 
-//jQuery for navbar mobile response
+
 $.get("api/items", (data) => {
   console.log("Items", data);
 
 });
-$(".sidenav").sidenav();
-
+//jQuery for navbar mobile response
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
 
 $("select").formSelect();
 
