@@ -24,7 +24,7 @@
             <img class="user-img" src="https://www.antgibbz.com/wp-content/uploads/2016/05/person-placeholder-200x200.jpg">
             <div class="card-content">
                 <h3>Welcome</h3>
-                <h6>{{user.dataValues.email}}!</h6>
+                <h6 style="text-align: center;">{{user.dataValues.email}}!</h6>
             </div>
         </div>
     </div>
@@ -37,16 +37,14 @@
             </div>
             <div class="card-stacked">
             <div class="card-content">
-                <p>Price:{{dataValues.price}}</p>
+            <p>Price:{{dataValues.price}}</p>
             <hr class="my-4">
             <p class="description">{{dataValues.description}}</p>
             <hr class="my-4">
             <p>Category: {{dataValues.category}}</p>
             <hr class="my-4">
-            <p>Sold by: {{User.dataValues.email}}</p>
-            <hr class="my-4">
             </div>
-            <div class="card-action del-post">
+            <div class="card-action">
                 <button class="delete-btn waves-effect waves-light" id="delete" data-id="{{dataValues.id}}"><i class="fas fa-trash-alt delete-icon"></i><h7>Delete Post</h7></button>
             </div>
             </div>
@@ -55,4 +53,4 @@
     </div>
 </div>
 
-  <script type="text/javascript" src="/js/members.js"></script>
+<script type="text/javascript" src="/js/members.js"></script>
