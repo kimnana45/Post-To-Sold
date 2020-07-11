@@ -13,17 +13,17 @@ $(document).ready(function(){
 
 
 
-  $("#delete").click(function() {
-    console.log($(this).attr("data-id"));
-    $.ajax({
-      method: "DELETE",
-      url: "/api/posts/" + $(this).attr("data-id")
-    })
-      // On success, run the following code
-      .then(function() {
-        console.log("Deleted Successfully!");
-        location.reload()
-      });
+  // $("#delete").click(function() {
+  //   console.log($(this).attr("data-id"));
+  //   $.ajax({
+  //     method: "DELETE",
+  //     url: "/api/posts/" + $(this).attr("data-id")
+  //   })
+  //     // On success, run the following code
+  //     .then(function() {
+  //       console.log("Deleted Successfully!");
+  //       location.reload()
+  //     });
     
-  });
+  // });
   

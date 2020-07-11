@@ -21,7 +21,6 @@
 <div class="row">
     <div class="col s12 m4 l3">
         <div class="card member-card">
-            <img class="user-img" src="https://www.antgibbz.com/wp-content/uploads/2016/05/person-placeholder-200x200.jpg">
             <div class="card-content">
                 <h3>Welcome</h3>
                 <h6 style="text-align: center;">{{user.dataValues.email}}!</h6>
@@ -44,9 +43,9 @@
             <p>Category: {{dataValues.category}}</p>
             <hr class="my-4">
             </div>
-            <div class="card-action">
+            {{!-- <div class="card-action">
                 <button class="delete-btn waves-effect waves-light" id="delete" data-id="{{dataValues.id}}"><i class="fas fa-trash-alt delete-icon"></i><h7>Delete Post</h7></button>
-            </div>
+            </div> --}}
             </div>
         </div> 
         {{/each}}
