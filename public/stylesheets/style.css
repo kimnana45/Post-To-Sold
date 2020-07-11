@@ -143,8 +143,10 @@ h5{
 }
 
 .footer-social{
-  margin-right: 5px;
-  margin-left: 10px;
+  margin-bottom: 20px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   color: white;
 }
 
