@@ -17,30 +17,32 @@
     <li><a class="nav-links" href="/members">User</a></li>
     <li><a class="nav-links" href="/logout">Logout</a></li>
 </ul>
+
 <div class="container">  
-    <div class="row">
-      {{#each items}}
-      <div class="col s12 m4">
-        <div id="cms" class="card">
-          <div class="card-image">
-            <img src={{dataValues.picture}}>
-            <span class="card-title">{{dataValues.name}}</span>
-          </div>
-          <div class="card-content">
-            <p>Price:{{dataValues.price}}</p>
-            <hr class="my-4">
-            <p class="description">{{dataValues.description}}</p>
-            <hr class="my-4">
-            <p>Category: {{dataValues.category}}</p>
-            <hr class="my-4">
-            <p>Sold by: {{User.dataValues.email}}</p>
-            <hr class="my-4">
-            <button class="purchase-btn waves-effect waves-light"><i class="fas fa-hand-holding-usd"></i>Purchase Item</button>
-          </div>
+  <div class="row">
+    {{#each items}}
+    <div class="col s12 m4">
+      <div id="cms" class="card">
+        <div class="card-image">
+          <img class="responsive-img" src={{dataValues.picture}}>
+          <span class="card-title">{{dataValues.name}}</span>
+        </div>
+        <div class="card-content">
+          <p>Price: ${{dataValues.price}}</p>
+          <hr class="my-4">
+          <p class="description">{{dataValues.description}}</p>
+          <hr class="my-4">
+          <p>Category: {{dataValues.category}}</p>
+          <hr class="my-4">
+          <p>Sold by: <a href="mailto:{{User.dataValues.email}}">{{User.dataValues.email}}</a></p>
+          <hr class="my-4">
+          <button class="purchase-btn waves-effect waves-light"><i class="fas fa-hand-holding-usd"></i>Purchase Item</button>
         </div>
       </div>
-      {{/each}}
-  </div>
+    </div>
+    {{/each}}
+  </div>  
+</div>
   
 
 <script type="text/javascript" src="/js/allitems.js"></script>
