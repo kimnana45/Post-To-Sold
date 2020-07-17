@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="col s12 m8 l9">
-        <h3 class="view-all" style="text-decoration: underline;">All Your Current Posted Items</h3>
+        <h3 class="view-all" style="text-decoration: underline;">All Your Current Posted and Purchased Items</h3>
         {{#each user.dataValues.Garage_sales}}
         <div class="card horizontal" >
             <div class="card-image item-img-container">
@@ -41,15 +41,16 @@
             <p class="user-description">{{dataValues.description}}</p>
             <hr class="my-4">
             <p>Category: {{dataValues.category}}</p>
-            <hr class="my-4">
+            <p>Status: Purchased: {{dataValues.sold}}</p>
             </div>
-            {{!-- <div class="card-action">
-                <button class="delete-btn waves-effect waves-light" id="delete" data-id="{{dataValues.id}}"><i class="fas fa-trash-alt delete-icon"></i><h7>Delete Post</h7></button>
-            </div> --}}
+            <div class="card-action">
+                <button class="delete-btn waves-effect waves-light" data-id="{{dataValues.id}}"><i class="fas fa-trash-alt delete-icon"></i><h7>Delete Post</h7></button>
+            </div>
             </div>
         </div> 
         {{/each}}
     </div>
+    
 </div>
 
 <script type="text/javascript" src="/js/members.js"></script>
