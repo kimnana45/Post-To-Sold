@@ -75,14 +75,14 @@ module.exports = function (app) {
   app.post("/api/posts", function (req, res) {
     req.body.UserId = req.user.id;
     db.Garage_sale.create(req.body).then(function (dbGarage_sale) {
-      console.log(dbGarage_sale);
+      // console.log(dbGarage_sale);
       res.json(dbGarage_sale);
     });
   });
 
   //DELETE route for when an item is sold/deleted
   app.delete("/api/posts/:id", (req, res) => {
-  
+
 
     db.Garage_sale
       .destroy({
@@ -93,4 +93,19 @@ module.exports = function (app) {
         res.json(result);
       });
   });
-}
+
+
+  app.put("/api/posts/:id", (req, res) => {
+    db.Garage_sale.update(
+      { sold: req.body.sold },
+      { where: { id: req.params.id } }
+    )
+      .then(rowsUpdated => {
+        console.log(rowsUpdated);
+        res.json(rowsUpdated)
+      }).catch(err => {
+        console.log(err);
+      });
+ })
+
+}  

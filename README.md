@@ -30,6 +30,10 @@ npm i
 
 Run your installs.
 
+## Link for deployed app
+
+https://pr0jectnum2.herokuapp.com/
+
 ## License
 
 This project is licensed under the None license.
