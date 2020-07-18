@@ -46,4 +46,4 @@ npm test
 
 ## Questions
 
-If you have any questions about the repo, you can open an issue, or contact kylest0kes directly at kylestokes1551@gmail.com.
+If you have any questions about the repo, you can open an issue, or contact us directly at kylestokes1551@gmail.com.
