@@ -30,6 +30,10 @@ npm i
 
 Run your installs.
 
+## Screenshot
+
+![](https://github.com/seebell/seebell.github.io/blob/master/assets/images/pts400.jpg)<br>
+
 ## Link for deployed app
 
 https://pr0jectnum2.herokuapp.com/
