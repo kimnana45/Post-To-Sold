@@ -46,6 +46,11 @@ This project is licensed under the None license.
 
 Just email us.
 
+## Group Members
+Kim Le
+Kyle Stokes 
+Sibel Cidem 
+
 ## Tests
 
 To run tests, run the following command:
