@@ -47,8 +47,8 @@ This project is licensed under the None license.
 Just email us.
 
 ## Group Members
-Kim Le
-Kyle Stokes 
+Kim Le, 
+Kyle Stokes,  
 Sibel Cidem 
 
 ## Tests
