@@ -30,7 +30,7 @@ npm i
 
 Run your installs.
 
-## Pre
+## Prev
 
 ![](https://github.com/seebell/seebell.github.io/blob/master/assets/images/pts400.jpg)<br>
 
