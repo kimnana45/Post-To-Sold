@@ -30,7 +30,7 @@ npm i
 
 Run your installs.
 
-## Preve
+## Prevei
 
 ![](https://github.com/seebell/seebell.github.io/blob/master/assets/images/pts400.jpg)<br>
 
