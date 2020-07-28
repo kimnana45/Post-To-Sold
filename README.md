@@ -34,7 +34,7 @@ Run your installs.
 
 ![](https://github.com/seebell/seebell.github.io/blob/master/assets/images/pts400.jpg)<br>
 
-## Link 
+## 
 
 https://pr0jectnum2.herokuapp.com/
 
